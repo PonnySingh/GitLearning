@@ -19,6 +19,30 @@ Git Clone:
 Syntex: Git Clone <remote directory url>
 When we did git clone then its copied all the source and branches from the remote to a local repository and created exactly same repository structure as it is on the remote github
 and also we don't need to add the origin, its by default added when we do git clone
+Note: When we do the git clone so it only clone the master branch as local repo not the others branches that  rempte repo have.
+Like: for example if there is a repo in github and it has multiple branch and if i clone that repo then only main branch will be copied while other branch will be not.
+
+although we can see all remote branches of related repository by using :
+git branch -r
+
+By default, my master branch is already tracking origin/master, i don't need to connect it myself
+so to work with these branches(remote branches that not copied locally) i can use simply switch command so if i switch to the remote branch then git check if this name branch have any remote branch or not and if it have remote branch then automatically create local branch adn it sets it up to track the related remote branch
+EX: suppose remote branch animals have tiger and cat branch too
+and i clone to this branch on my loca machine
+then only master branch will link to remote master branch
+but when i do git switch cat so so this command will also create cat command locally and link that local branch to origin/cat remote branch.
+
+Head and Detached head: Suppose whenever we do some commmit then on that branch head is automatically move to that commit so head is refer to the branh name and latest commit but in the deatached head, head is poining to the latest commit and when we switch to the another branch then git automatically deleted that commit.
+So if want to do some experiment sommit than in that cases we can do deatached head commit but we we want that commit then we can create a new branch from that commit then we can carry all commits in the branch.
+
+ 
+this is visualizing git tool
+
+Ex of deatached head: create a branch and do some commits 
+Now see all commits by using : git log and notice the commit id and move to that commit by using command : 
+git checkout <commit id>
+and now do some commit and in this cases your head will be deatched 
+
 Rename Currrent branch: To rename the current branch we can use following command:
 git branch -M <new name>
 ex: git branch -M master
@@ -29,6 +53,17 @@ Merging two branchs: we can merge two branch by using following commands:
 git merge <branch to merge> <branch in whicn we want to merge>
 ex: git merge foods main
 Then u have to ressolve the conflict and then need to add the file again and then commit it to main branch
+
+Remote Tracking branch: At the time you last communicated with this remote repository, here is where x branch was pointing
+
+They follow this pattern <remote>/<branch>
+1) origin/master references the state of the master branch on the remote repo named origin
+2) upstream/logoResesign references the state of the logoRedisgn branch on the remote named upstream(a command remote name)
+
+like: in other word suppose we have master branch for local and master branch in the remote repo and remote repo name is origin and the master banch of remote repo will be origin/master and if we commit on local branch and do not push changes in remote branch then by remote tracking branch when we do git status then it will show status like: remote branch is behind the 2 or 1 commits what ever commits we did. and similarly if we do some changes in remote branch and then in git log then status message like: your remote branch is ahead of local brach and so on.
+
+
+
 
 
 
