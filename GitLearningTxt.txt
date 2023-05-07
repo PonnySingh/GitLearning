@@ -1,0 +1,39 @@
+Git Learning :
+Add Remote Url:  To add the remote branch url we can use following syntex:
+git add remote <remote branch name> <remote branch  url>
+git add remote git@github.com:PonnySingh/GitLearning.git
+
+Git push :
+What does -u option with git push commands like: gitpush -u origin master
+Ans: The - option allows us to set the upstream of the branch we are pushing you can think of this as a link connection out local branch to a remote branch in git hub
+ForEx: 
+if we run git push - u origin master       so once we did this and next time we just push the branch by using :  gitt push only it will automaticallly take the remote branch that we pass during previous command with -u
+
+git Force Push: some time there is too much different between remote and
+and local repository in my first i make a local branch add some files and push these files to remote then i create another folder in another location and make it git repository by using git init and then add some different file in it add the remote url of previous git repository and then try to push that repository so it was giving me error like, so i did forcefull push by using following command:
+git push --force origin master   
+After using above command my current repository pushed to the remote repository and files of previous repository has been deleted, so it will delete all the previous content and push tne new content of current local repository 
+
+
+Git Clone: 
+Syntex: Git Clone <remote directory url>
+When we did git clone then its copied all the source and branches from the remote to a local repository and created exactly same repository structure as it is on the remote github
+and also we don't need to add the origin, its by default added when we do git clone
+Rename Currrent branch: To rename the current branch we can use following command:
+git branch -M <new name>
+ex: git branch -M master
+
+Note: Now 'Main' is the default branch of github while in git it is still master
+
+Merging two branchs: we can merge two branch by using following commands:
+git merge <branch to merge> <branch in whicn we want to merge>
+ex: git merge foods main
+Then u have to ressolve the conflict and then need to add the file again and then commit it to main branch
+
+
+
+
+
+
+
+ 
